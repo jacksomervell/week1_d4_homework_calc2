@@ -20,15 +20,25 @@ var calcButton = document.getElementById("basic-calc");
 
       if (op === "+") {
         console.log(num1 + num2);
+        var answer = (num1 + num2);
       }
       if (op === "-") {
         console.log(num1 - num2);
+        var answer = (num1 - num2);
       }
       if (op === "/") {
         console.log(num1 / num2);
+        var answer = (num1 / num2);
       }
       if (op === "*") {
         console.log(num1 * num2);
+        var answer = (num1 * num2);
       }
 
+    document.getElementById("basic-answer").className = "show";
+    document.getElementById("basic-answer-alert").innerHTML = answer; 
+
+    
+
+      
    console.log("clicked!"); })
