@@ -43,11 +43,12 @@ var calcButton = document.getElementById("basic-calc");
 //trip calculator
 
 var calcButton = document.getElementById("trip-calc");
+
   calcButton.addEventListener("click", function(){
-    var dist = document.getElementById("basic-num-1").value
-    var mpg = document.getElementById("basic-operation").value
-    var cost = document.getElementById("basic-num-2").value
-    var speed = document.getElementById("basic-num-2").value
+    var dist = document.getElementById("trip-distance").value
+    var mpg = document.getElementById("trip-mpg").value
+    var cost = document.getElementById("trip-cost").value
+    var speed = document.getElementById("trip-speed").value
 
 
 
@@ -57,3 +58,8 @@ var time = dist / speed;
 
       var cost = (dist / actualMPG * cost);
       cost = Math.round(cost * 100) / 100;
+
+document.getElementById("trip-answer").className = "show";
+    document.getElementById("trip-answer-alert").innerHTML = "Your time will be " + time + " and your cost will be " + cost; 
+
+});
