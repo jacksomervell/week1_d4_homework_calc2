@@ -85,3 +85,25 @@ calcButton.addEventListener("click", function(){
       document.getElementById("bmi-answer").className = "show";
     document.getElementById("bmi-answer-alert").innerHTML = "Congratulations buddy, your bmi is " + bmi; 
   });
+
+//mortgage
+
+var calcButton = document.getElementById("mortgage-calc");
+
+calcButton.addEventListener("click", function(){
+  var loan = document.getElementById("mortgage-loan").value
+  var apr = document.getElementById("mortgage-apr").value
+  var term = document.getElementById("mortgage-term").value
+
+    var loan = parseFloat(loan)
+    var apr = parseFloat(apr) / 100 / 12
+    var term = parseFloat(term)
+
+      var temp = Math.pow((1 + apr), term);
+      var payment = loan * apr * temp / (temp - 1);
+      payment = Math.round(payment * 100) / 100;
+
+      // finally, display the result
+      document.getElementById("mortgage-answer").className = "show";
+    document.getElementById("mortgage-answer-alert").innerHTML = "Your monthly payment is " + payment; 
+  });
