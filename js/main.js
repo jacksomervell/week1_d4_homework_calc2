@@ -59,7 +59,29 @@ var time = dist / speed;
       var cost = (dist / actualMPG * cost);
       cost = Math.round(cost * 100) / 100;
 
-document.getElementById("trip-answer").className = "show";
-    document.getElementById("trip-answer-alert").innerHTML = "Your time will be " + time + " and your cost will be " + cost; 
+    document.getElementById("trip-answer").className = "show";
+    document.getElementById("trip-answer-alert").innerHTML = "Your time will be " + time + " miles and your cost will be " + cost; 
 
 });
+
+
+  //BMI calc
+
+var calcButton = document.getElementById("bmi-calc");
+
+calcButton.addEventListener("click", function(){
+    var height = document.getElementById("bmi-height").value
+    var mass = document.getElementById("bmi-mass").value
+    var units = document.getElementById("bmi-units").value
+    
+      var mass = parseFloat(mass);
+      var height = parseFloat(height);
+      console.log(mass, height, mass / Math.pow(height, 2))
+
+      bmi = mass / Math.pow(height, 2);
+      bmi = Math.round(bmi * 100) / 100; // round it to two decimals
+
+      // finally, display the result
+      document.getElementById("bmi-answer").className = "show";
+    document.getElementById("bmi-answer-alert").innerHTML = "Congratulations buddy, your bmi is " + bmi; 
+  });
